@@ -1,0 +1,43 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/fun/fun",
+    "pages/index/index",
+    "pages/log/log",
+    "pages/pub/pub",
+    "pages/mess/mess",
+    "pages/col/col",
+    "pages/about/about",
+    "pages/messs/messs"
+      ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "NEU RUNNER",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#3cb371",
+    "list": [
+      {
+        "pagePath": "pages/fun/fun",
+        "text": "首页",
+        "iconPath": "/images/component.png",
+        "selectedIconPath": "/images/component_cur.png"
+      },
+      {
+        "pagePath": "pages/log/log",
+        "text": "发布",
+        "iconPath": "/images/basics.png",
+        "selectedIconPath": "/images/basics_cur.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "/images/about.png",
+        "selectedIconPath": "/images/about_cur.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

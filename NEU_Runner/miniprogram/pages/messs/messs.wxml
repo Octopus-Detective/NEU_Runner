@@ -1,0 +1,63 @@
+<!--pages/messs/messs.wxml-->
+<swiper class="screen-swiper2 {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-color="#aaaaaa" indicator-active-color="#8799a3">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{swiperList[index]}}" mode="aspectFill" ></image>
+  </swiper-item>
+</swiper>
+<view class="cu-cards article isCard shadow-lg ">
+  <view class="cu-item ">
+    <view class="title">
+      <view class="text-cut text-xl">物品名称:{{pagedata[0].mingcheng}}</view>
+    </view>
+    <view class="content">
+      <view class="desc">
+        <view class="text-content"> {{pagedata[0].miaoshu}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-cards article isCard shadow-lg ">
+  <view class="cu-item ">
+    <view class="title">
+    <view class='uuu'>
+      
+      <view class="text-cut text-xl">地点</view>
+      <view class='text-xl'>
+      <text class="cuIcon-location"></text></view>：{{picker[pagedata[0].didian]}}
+    </view>
+    </view>
+  </view>
+</view>
+<view class="cu-cards article isCard shadow-lg ">
+  <view class="cu-item ">
+    <view class="title">
+    <view class='eee'>
+    <view class='uuu'>
+      <view class="text-cut text-xl">联系电话 </view>
+      <view class='text-xl'>
+      <text class="cuIcon-phone" wx:if="{{ban}}">：{{pagedata[0].phone}}</text></view>
+    </view>
+    <view class='uuu' bindtap='fuzhi'>
+      <text class="cuIcon-copy"></text><text class='text-xs'>复制</text>
+      </view>
+    </view>
+    </view>
+  </view>
+</view>
+<view class="cu-cards article isCard shadow-warp">
+  <view class="cu-item ">
+    <view class="title">
+    <view class='eee'>
+      <view class='uuu'>
+      <view class="text-cut text-xl">联系微信</view>
+      <view class='text-xl'>
+      <text class="cuIcon-weixin" wx:if="{{ban}}">：{{pagedata[0].weixin}} </text></view>
+    </view>
+      <view class='uuu' bindtap='fuzhi2'>
+      <text class="cuIcon-copy"></text><text class='text-xs'>复制</text>
+      </view>
+    </view>
+    </view>
+  </view>
+</view>
+

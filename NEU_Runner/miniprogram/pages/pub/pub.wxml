@@ -1,0 +1,62 @@
+<!--pages/fabu/fabu.wxml-->
+<view class="cu-bar bg-white solid-bottom margin-top margin-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text> 
+      <text class='text-shadow text-orange'>我发布的短期订单</text>
+    </view>
+  </view>
+
+  <view class="cu-list1 menu-avatar">
+    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{xinxi}}" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+      <image class="cu-avatar radius xxl" src="{{item.fileIDs[0]}}"></image>
+      <view class="content">
+        <view class="text-black">订单名称:{{item.mingcheng}}</view>
+        <view class="text-gray text-sm">
+          订单价格：<text class="text-price text-red">{{item.piece}}</text></view>
+                  <view class="text-gray text-sm">
+          联系电话：{{item.phone}}</view>
+                  <view class="text-gray text-sm">
+          联系微信：{{item.weixin}}</view>
+                  <view class="text-gray text-sm">
+          商品类型：{{picker1[item.type]}}</view>
+
+      </view>
+      <view class="action">
+
+        <view class="cu-tag  bg-grey sm" wx:if="{{item.neew[0]}}">贵重</view>
+      </view>
+      <view class="move">
+        <view class="bg-red"data-iid1="{{item._id}}" bindtap='delete1'>删除</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-bar bg-white solid-bottom margin-top margin-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-green "></text> 
+      <text class='text-shadow text-green'>我发布的长期订单</text>
+    </view>
+  </view>
+  <view class="cu-list1 menu-avatar">
+    <view class="cu-item {{modalName1=='move-box-'+ index1?'move-cur':''}}" wx:for="{{xinxi1}}" wx:for-index="index1" wx:key bindtouchstart="ListTouchStart1" bindtouchmove="ListTouchMove1" bindtouchend="ListTouchEnd1" data-target1="move-box-{{index1}}">
+      <image class="cu-avatar radius xxl" src="{{item.fileIDs1[0]}}"></image>
+      <view class="content">
+        <view class="text-black">订单名称:{{item.mingcheng}}</view>
+        <view class="text-gray text-sm">
+          地点：{{picker[item.didian]}}</view>
+                  <view class="text-gray text-sm">
+          联系电话：{{item.phone}}</view>
+                  <view class="text-gray text-sm">
+          联系微信：{{item.weixin}}</view>
+
+
+      </view>
+      <view class="action">
+        <view class="cu-tag  bg-grey sm" wx:if="{{item.type2}}">可代取</view>
+        <view class="cu-tag  bg-grey sm" wx:else>需代取</view>
+      </view>
+      <view class="move">
+        <view class="bg-red" data-iid2="{{item._id}}" bindtap='delete2'>删除</view>
+      </view>
+    </view>
+  </view>
