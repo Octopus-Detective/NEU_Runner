@@ -1,0 +1,22 @@
+<!--miniprogram/pages/about/about.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}"><view slot="backText"></view><view slot="content"></view></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg shadow-warp'>
+    <view class="cu-bar bg-white">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">关于我们</text>
+      <text class="bg-blue"></text>
+    </view>
+  </view>
+  <view class='text-content'>
+    <view>欢迎使用东北大学顺风跑代取平台！</view>
+    <view class='margin-top-sm'>这是一款面向东北大学全体学生的顺风代取、代领招领平台。</view>
+    <view class='margin-top-sm'>目前正处于试运营阶段，欢迎提出宝贵意见。</view>
+    <view class='margin-top-sm'>特此感谢ColorUI开源组件库提供的css库。</view>
+    <view class='margin-top-sm'>如果你遇到了什么问题请反馈给我们，我们会尽快处理！</view>
+  </view>
+  <view class="cu-bar bg-white">
+    <view class="action sub-title1">
+      <text class="text-ABC text-blue">about</text>
+    </view>
+  </view>
+</view>

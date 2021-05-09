@@ -1,0 +1,87 @@
+/* pages/messs/messs.wxss */
+.cu-cards {
+  width: 100%;
+  margin: 2px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #f1f1f1;
+  font-size: 24rpx;
+}
+
+.cu-cards>.cu-item {
+	background-color: var(--white);
+	overflow: hidden;
+  
+	border-radius: 10rpx;
+	margin: 10rpx;
+}
+
+.cu-cards>.cu-item.shadow-blur {
+	overflow: initial;
+}
+.cu-cards.article {
+	display: block;
+}
+
+.cu-cards.article>.cu-item {
+	padding-bottom: 30rpx;
+}
+
+.cu-cards.article>.cu-item .title {
+	font-size: 30rpx;
+	font-weight: 900;
+	color: var(--black);
+	line-height: 100rpx;
+	padding: 0 30rpx;
+}
+
+.cu-cards.article>.cu-item .content {
+	display: flex;
+	padding: 0 30rpx;
+}
+
+.cu-cards.article>.cu-item .content>image {
+	width: 240rpx;
+	height: 6.4em;
+	margin-right: 20rpx;
+	border-radius: 6rpx;
+}
+.cu-cards.article>.cu-item .content .desc {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.cu-cards.article>.cu-item .content .text-content {
+	font-size: 28rpx;
+	color: #888;
+	
+	overflow: hidden;
+  flex-wrap: wrap;
+}
+.uuu{
+  display: flex;
+ 
+}
+.buttonn{
+  width: 250rpx;
+  height: 100rpx;
+  margin: 20rpx auto;
+}
+.eee{
+  display: flex;
+  justify-content: space-between;
+}
+.screen-swiper2 {
+	min-height: 600rpx;
+}
+
+.screen-swiper2 image,
+.swiper-item image {
+	width: 100%;
+	display: block;
+	height: 100%;
+	margin: 0;
+	pointer-events: none;
+}

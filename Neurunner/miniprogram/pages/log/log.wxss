@@ -1,0 +1,55 @@
+.nav{
+  width:100%;
+  height:100rpx;
+  display:flex;
+  flex-direction:row;
+  }
+.default{
+  line-height:100rpx;
+  text-align:center;
+  flex:1;
+  color:#000;
+  font-weight:bold;
+  font-size:34rpx;
+  }
+.color1{
+  line-height:100rpx;
+  text-align:center;
+  color:green;
+  flex:1;
+  border-right:2px solid green;
+  font-weight:bold;
+  font-size:34rpx;
+  }
+  .color2{
+  line-height:100rpx;
+  text-align:center;
+  color:green;
+  flex:1;
+  border-left:2px solid green;
+  font-weight:bold;
+  font-size:34rpx;
+  }
+.show{
+  display:block;
+  }
+.hidden{
+  display:none;
+  }
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}
+.cur1 {
+	border-bottom: 2px solid;
+}
+.cu-form-group1 {
+	background-color: var(--white);
+	padding: 1rpx 30rpx;
+	display: flex;
+	align-items: center;
+	min-height: 80rpx;
+	justify-content: space-between;
+}
+.Line{
+  border-top: 1rpx solid #eee;
+  }

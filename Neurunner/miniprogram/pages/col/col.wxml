@@ -1,0 +1,33 @@
+<!--pages/collection/collection.wxml-->
+<!--pages/fabu/fabu.wxml-->
+
+  <view class="cu-bar bg-white solid-bottom margin-top margin-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-blue"></text> 
+      <text class='text-shadow text-blue'>我的收藏</text>
+    </view>
+  </view>
+  <view class="cu-list1 menu-avatar">
+    <view class="cu-item {{modalName1=='move-box-'+ index?'move-cur':''}}" wx:for="{{xinxi}}" wx:key bindtouchstart="ListTouchStart1" bindtouchmove="ListTouchMove1" bindtouchend="ListTouchEnd1" data-target="move-box-{{index}}">
+      <image class="cu-avatar radius xxl" src="{{item.fileIDs}}"></image>
+      <view class="content">
+        <view class="text-black">订单名称:{{item.mingcheng}}</view>
+        <view class="text-gray text-sm">
+          订单价格：<text class="text-price text-red">{{item.piece}}</text></view>
+                  <view class="text-gray text-sm">
+          联系电话：{{item.phone}}</view>
+                  <view class="text-gray text-sm">
+          联系微信：{{item.weixin}}</view>
+                  <view class="text-gray text-sm">
+          物品类型：{{picker1[item.type]}}</view>
+
+      </view>
+      <view class="action">
+
+        <view class="cu-tag  bg-grey sm" wx:if="{{item.neew}}">全新</view>
+      </view>
+      <view class="move">
+        <view class="bg-red" data-iid="{{item._id}}" bindtap='delete1'>取消收藏</view>
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,58 @@
+<!--pages/index/index.wxml-->
+<scroll-view scroll-y class="scrollPage">
+<view class="stars ">
+  <view class="star "></view>
+  <view class="star pink "></view>
+  <view class="star blue "></view>
+  <view class="star yellow "></view>
+</view>
+  <view class="UCenter-bg">
+  <view class="stars ">
+  <view class="star "></view>
+  <view class="star pink "></view>
+  <view class="star blue "></view>
+  <view class="star yellow "></view>
+</view>
+  <button class='cu-btn icon lg1' catchtap='newgetInfo'  type='default' plain='true' >
+  <image class='image1' src='{{src}}' mode='aspectFill'> </image>
+  </button>
+<view class="text-xl">{{name}}</view>
+    <image src="https://7465-test-qfqln-1259069545.tcb.qcloud.la/image/wave.gif?sign=4da8dd1136d12d94a35bc917fc0aded6&t=1558280997" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+  
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/about" hover-class="none">
+       <text class="cuIcon-infofill text-blue"></text>
+        <text class="text-grey">关于我们</text>
+      </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/pub/pub" hover-class="none">
+        <text class="cuIcon-roundaddfill text-green"></text>
+        <text class="text-grey">我的发布</text>
+      </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+    <navigator class="content" url="/pages/col/col" hover-class="none">
+        <text class="cuIcon-likefill text-red"></text>
+        <text class="text-grey">我的收藏</text>
+     </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">意见反馈</text>
+      </button>
+    </view>
+
+  </view>
+  
+  <view class="padding flex flex-direction">
+  <button class="cu-btn bg-red lg" bindtap='exit'>退出登录</button>
+</view>
+</scroll-view>

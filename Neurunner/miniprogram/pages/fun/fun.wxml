@@ -1,0 +1,171 @@
+<!--pages/fun/fun.wxml-->
+<!--卡片轮播-->
+ <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="4000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.imageUrl}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    </view>
+  </swiper-item>
+</swiper>
+<!--搜索条，未实现功能待定-->
+ <!-- <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow-blur round">搜索</button>
+    </view>
+  </view>  -->
+<!--tab-->
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center text-lg">
+    <view class="cu-item text-shadow flex-sub {{item.id==TabCur?'text-green cur':''}}" wx:for="{{tablist}}" wx:key bindtap="tabSelect" data-id="{{item.id}}">
+    {{item.mess}}
+    </view>
+  </view>
+</scroll-view>
+ 
+  <swiper current="{{TabCur}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+  <!--卡片一-->
+
+    <swiper-item class='height1'>
+      <view style="display:none">
+  <image wx:for="{{image}}" wx:key="id" id="{{item.id}}" src="{{item.fileIDs[0]}}" bindload="onImageLoad1"></image></view> 
+      <scroll-view scroll-y class='height1' style="height:{{scrollH}}px" bindscrolltolower="brandShow" >
+        <view class="cu-card case " >
+          <view class="cu-item shadow " >
+            <view class='pop' wx:for="{{col1}}" wx:key="id">
+            <navigator  url='/pages/mess/mess?shuju1={{item._id}}' bindtap="catchTapCategory" data-iid="{{item._id}}">
+            <block>
+              <view class="image ">
+                <image src="{{item.fileIDs[0]}}" style="width:100%;heigth:{{item.heigth}}px" mode="widthFix"></image>
+                <view wx:if="{{item.neew[0]}}" class="cu-tag bg-blue">加急</view>
+                  <view class="cu-list menu-avatar">
+                    <view class="cu-item">
+                    <view class="cu-avatar round lg" style="background-image:url({{item.touxiangurl}});"> </view>
+                      <view class="content flex-sub">
+                        <view class="text-grey text-xs" >{{item.mingcheng}}</view>
+                          <view class="text-gray text-xs">
+                          <text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.view}}
+                          <text class="cuIcon-likefill margin-lr-xs"></text> {{item.love}}  
+                        </view>
+                      </view>
+                    </view>
+                   </view>
+
+        </view>
+        </block>
+        </navigator>
+        </view>
+        </view>
+         <view class='margin-bottom-xxxl' wx:if="{{hidden}}"></view>
+        </view>
+        
+         <view class="cu-card case " >
+          <view class="cu-item shadow " >
+            <view class='pop' wx:for="{{col2}}" wx:key="id">
+            <navigator url='/pages/mess/mess?shuju1={{item._id}}' bindtap="catchTapCategory" data-iid="{{item._id}}">
+            <block>
+              <view class="image ">
+                <image src="{{item.fileIDs[0]}}" style="width:100%;heigth:{{item.heigth}}px" mode="widthFix"></image>
+                <view wx:if="{{item.neew[0]}}" class="cu-tag bg-blue">加急</view>
+                  <view class="cu-list menu-avatar">
+                    <view class="cu-item">
+                    <view class="cu-avatar round lg" style="background-image:url({{item.touxiangurl}});"> </view>
+                      <view class="content flex-sub">
+                        <view class="text-grey text-xs" >{{item.mingcheng}}</view>
+                          <view class="text-gray text-xs">
+                          <text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.view}}
+                          <text class="cuIcon-likefill margin-lr-xs"></text> {{item.love}}  
+                        </view>
+                      </view>
+                    </view>
+                   </view>
+
+        </view>
+        </block>
+        </navigator>
+        </view>
+        </view>
+         <view class='margin-bottom-xxxl' wx:if="{{hidden}}"></view>
+        </view>
+  <view class="weui-loadmore" hidden="{{hidden}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">以上已加载</view>
+  </view>  
+</scroll-view>
+    </swiper-item>
+     <!--卡片二-->
+    <swiper-item class='height1'>
+       <view style="display:none">
+  <image wx:for="{{image2}}" wx:key="id" id="{{item.id}}" src="{{item.fileIDs1[0]}}" bindload="onImageLoad2"></image></view> 
+      <scroll-view scroll-y class='height1' style="height:{{scrollH}}px" bindscrolltolower="brandShow2" >
+        <view class="cu-card case "  >
+          <view class="cu-item shadow ">
+            <view class='pop' wx:for="{{col11}}" wx:key="id">
+            <navigator url='/pages/messs/messs?shuju1={{item._id}}' bindtap="catchTapCategory2" data-iid="{{item._id}}">
+            <block>
+              <view class="image ">
+                <image src="{{item.fileIDs1[0]}}" style="width:100%;heigth:{{item.heigth}}px" mode="widthFix"></image>
+                <view wx:if="{{item.type2}}" class="cu-tag bg-blue">需代取</view>
+                 <view wx:else class="cu-tag bg-blue">可代取</view>
+                  <view class="cu-list menu-avatar">
+                    <view class="cu-item">
+                    <view class="cu-avatar round lg" style="background-image:url({{item.touxiangurl}});"> </view>
+                      <view class="content flex-sub">
+                        <view class="text-grey text-xs" >{{item.mingcheng}}</view>
+                          <view class="text-gray text-xs">
+                          <text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.view}}
+                          <text class="cuIcon-likefill margin-lr-xs"></text> {{item.love}}  
+                        </view>
+                      </view>
+                    </view>
+                   </view>
+
+        </view>
+        </block>
+        </navigator>
+        </view>
+        </view>
+         <view class='margin-bottom-xxxl' wx:if="{{hidden2}}"></view>
+        </view>
+        
+         <view class="cu-card case ">
+          <view class="cu-item shadow ">
+            <view class='pop' wx:for="{{col22}}" wx:key="id">
+            <navigator url='/pages/messs/messs?shuju1={{item._id}}' bindtap="catchTapCategory2" data-iid="{{item._id}}">
+            <block>
+              <view class="image ">
+                <image src="{{item.fileIDs1[0]}}" style="width:100%;heigth:{{item.heigth}}px" mode="widthFix"></image>
+                <view wx:if="{{!item.type2}}" class="cu-tag bg-blue">可代取</view>
+                <view wx:if="{{item.type2}}" class="cu-tag bg-blue">需代取</view>
+                  <view class="cu-list menu-avatar">
+                    <view class="cu-item">
+                   <view class="cu-avatar round lg" style="background-image:url({{item.touxiangurl}});"> </view>
+                      <view class="content flex-sub">
+                        <view class="text-grey text-xs" >{{item.mingcheng}}</view>
+                          <view class="text-gray text-xs">
+                          <text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.view}}
+                          <text class="cuIcon-likefill margin-lr-xs"></text> {{item.love}}  
+                        </view>
+                      </view>
+                    </view>
+                   </view>
+
+        </view>
+        </block>
+        </navigator>
+        </view>
+        </view>
+         <view class='margin-bottom-xxxl' wx:if="{{hidden2}}"></view>
+        </view>
+  <view class="weui-loadmore" hidden="{{hidden2}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">以上已加载</view>
+  </view>  
+</scroll-view>
+    </swiper-item>
+  </swiper>
+
+
